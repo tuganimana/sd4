@@ -11,7 +11,7 @@ import React from  'react'
 // export default Home
 function Home(){
     return(<>
-    <div><p>Home page</p></div>
+    <div><p>Coming soon!!!</p></div>
     </>)
 }
 
