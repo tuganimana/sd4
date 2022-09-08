@@ -1,48 +1,54 @@
-import React, {useState} from  'react'
-import { useNavigate } from 'react-router-dom'
-// export default Home
-function Home(){
-    let navigate = useNavigate()
-    const[loading, setLoading]=useState(false)
-    const handleSubmit =()=>{
-         setLoading(true)
-         setTimeout(()=>{
-           navigate('/dashboard')
-         },4000)
+import React, {useState} from 'react'
+import Girlsincode from '../images/new ida 2.jpg'
+import Girlsincode2 from '../images/girls in code.jpeg'
+const Home =()=>{
+    const[toggle,setToggle]=useState(false)
+    
+    const handleToggle =()=>{
+        setToggle(!toggle)
     }
+    const data =[
+        {
+            title:'Girls in Code summit 2022',
+            images:Girlsincode,
+            description:'A program initiated to close the gender gap in technology by focusing on girls and women between 18 -24 years old from low income families and refugees camps'
+        },
+        {
+            title:'Girls in Code summit 2022',
+            images:Girlsincode2,
+            description:'A program initiated to close the gender gap in technology by focusing on girls and women between 18 -24 years old from low income families and refugees camps'
+        },
+        {
+            title:'Girls in Code summit 2022',
+            images:Girlsincode,
+            description:'A program initiated to close the gender gap in technology by focusing on girls and women between 18 -24 years old from low income families and refugees camps'
+        },
+        {
+            title:'Girls in Code summit -Smile face',
+            images:Girlsincode2,
+            description:'A program initiated to close the gender gap in technology by focusing on girls and women between 18 -24 years old from low income families and refugees camps'
+        }
+    ]
     return(<>
-    <div className=''>
-    <div className='bg-gradient-to-b from-green-50 to-pink-200 p-16 h-screen'>
-        
-     <div className="max-w-md mx-auto">
-        <div className='bg-white p-16 rounded-2xl drop-shadow-xl'>
-           <p className='font-bold text-3xl text-blue-400 py-4'>Welcome back</p>
-           
-           <form method="POST">
-                 <p>Username</p>
-                 <input type="text" className='w-full py-2  px-3 rounded focus:outline-none bg-gray-100 my-2'/>
-
-                 <p>Password</p>
-                 <input type="password" className='w-full py-2  px-3 rounded focus:outline-none bg-gray-100 my-2'/>
-             
+    <div className='bg-gradient-to-b from-gray-50 to-pink-300 h-32'>
+      <p className='text-5xl text-gray-600 mt-24 text-center font-bold'>Welcome Girls In Code</p>
+      <div className='max-w-3xl mx-auto mt-8 p-4'>
+          <div className='grid md:grid-cols-3 gap-6'>
+              {data.map((items, index)=>{
+                  return(
+                  <div key={index} className='bg-gray-50  rounded-md shadow-lg'>
+                  <img src={items.images}  alt="girls in Code" className='w-full rounded-bl-3xl'/>
+                  <p className="p-3 text-green-900 text-medium font-bold">{items.title}</p>
+                  <hr/>
+                  <p className='px-3 py-2 '>{items.description}</p>
+              </div>)
+              })}
               
-             </form>
-            {loading? <button  className='bg-gradient-to-r from-gray-50 to-blue-600 p-3 rounded-lg w-full'>Please wait......</button>
-            :
-             <button onClick={()=>handleSubmit()} className='bg-gradient-to-r from-gray-50 to-blue-600 p-3 rounded-lg w-full'>Signin</button>
-             }
-           <div className='flex mt-4 space-x-4'>
-            <div className='text-xs'>Don't you have an account ?</div>
-             
-            <div className='text-xs'> < a href="/signup">Sign up</a></div>
-        </div>
-        </div>
-     </div>
-
-
-        </div>
-        </div>
-    </>)
+              
+          </div>
+      </div>
+    </div>
+</>)
 }
 
 export default Home
