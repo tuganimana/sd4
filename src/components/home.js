@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Girlsincode from '../images/new ida 2.jpg'
 import Girlsincode2 from '../images/girls in code.jpeg'
 const Home =()=>{
-    const[toggle,setToggle]=useState(false)
+    // const[toggle,setToggle]=useState(false)
     
-    const handleToggle =()=>{
-        setToggle(!toggle)
-    }
+    // const handleToggle =()=>{
+    //     setToggle(!toggle)
+    // }
     const data =[
         {
             title:'Girls in Code summit 2022',
